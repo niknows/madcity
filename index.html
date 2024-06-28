@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad City Simulata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Mad City Simulata</h1>
+        </header>
+        <main>
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+            <div id="controls">
+                <h2>Infrastructure Options</h2>
+                <button onclick="selectMode('solar')">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-sun">
+                        <path d="M8 0a.5.5 0 0 1 .5.5V2a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 8 0zM2.343 2.343a.5.5 0 0 1 .707 0L4.9 4.192a.5.5 0 1 1-.707.707L2.343 3.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707L11.808 4.9a.5.5 0 1 1-.707-.707l1.85-1.85a.5.5 0 0 1 .707 0zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm4 4a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1h-1.5a.5.5 0 0 1-.5-.5zm-8 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H4.5a.5.5 0 0 1-.5-.5zm9.657-2.343a.5.5 0 0 1-.707 0L11.1 11.808a.5.5 0 1 1 .707-.707l1.85 1.85a.5.5 0 0 1-.707 0zM2.343 13.657a.5.5 0 0 1 0-.707l1.85-1.85a.5.5 0 1 1 .707.707l-1.85 1.85a.5.5 0 0 1-.707 0zM8 14a.5.5 0 0 1-.5-.5v-1.5a.5.5 0 0 1 1 0v1.5a.5.5 0 0 1-.5.5z"/>
+                    </svg>
+                    Add Solar Panels
+                </button>
+                <button onclick="selectMode('transport')">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-car-front">
+                        <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        <path fill-rule="evenodd" d="M10.4 1.4A.5.5 0 0 1 10.5 1h1a.5.5 0 0 1 .4.2l2.4 3.2A.5.5 0 0 1 14.5 5H1.5a.5.5 0 0 1-.4-.2l-2.4-3.2A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .1.4L.3 4h15.4L15.4 1.4z"/>
+                    </svg>
+                    Add Autonomous Transport
+                </button>
+                <button onclick="selectMode('iot')">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-broadcast">
+                        <path d="M4.21 4.21a.5.5 0 0 1 .7 0L8 7.3l3.09-3.09a.5.5 0 0 1 .7.7L8.7 8l3.09 3.09a.5.5 0 0 1-.7.7L8 8.7l-3.09 3.09a.5.5 0 0 1-.7-.7L7.3 8 4.21 4.91a.5.5 0 0 1 0-.7z"/>
+                    </svg>
+                    Add IoT Sensors
+                </button>
+                <button onclick="resetMap()">Reset</button>
+            </div>
+            <div id="stats">
+                <h2>Impact Statistics</h2>
+                <p id="efficiency">Efficiency: 0%</p>
+                <p id="air-quality">Air Quality: 0%</p>
+                <p id="traffic">Traffic Reduction: 0%</p>
+            </div>
+            <div id="legend">
+                <h2>Legend</h2>
+                <p><span class="legend-icon" style="background-color: yellow;"></span> Solar Panels</p>
+                <p><span class="legend-icon" style="background-color: blue;"></span> Autonomous Transport</p>
+                <p><span class="legend-icon" style="background-color: green;"></span> IoT Sensors</p>
+            </div>
+        </main>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
